@@ -10,7 +10,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import io.github.bonigarcia.wdm.WebDriverManager;
+
 import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class CallbackTest {
@@ -25,28 +27,28 @@ public class CallbackTest {
     @Test
     void test() {
         driver.get("http://localhost:9999");
-        driver.findElement(By.cssSelector("span[data-test-id='name'] input")).sendKeys("Мария");
-        driver.findElement(By.cssSelector("span[data-test-id='phone'] input")).sendKeys("+79174203535");
+        driver.findElement(By.cssSelector("[data-test-id='name'] input")).sendKeys("Иванова-Петрова Мария");
+        driver.findElement(By.cssSelector("[data-test-id='phone'] input")).sendKeys("+79174203535");
         driver.findElement(By.className("checkbox__text")).click();
         driver.findElement(By.className("button__text")).click();
-        String text = driver.findElement(By.className("paragraph")).getText();
+        String text = driver.findElement(By.className("Success_successBlock__2L3Cw")).getText();
         assertEquals("Ваша заявка успешно отправлена! Наш менеджер свяжется с вами в ближайшее время.", text.trim());
     }
 
-        @BeforeEach
-        void setUp() {
-            ChromeOptions options = new ChromeOptions();
-            options.addArguments("--disable-dev-shm-usage");
-            options.addArguments("--no-sandbox");
-            options.addArguments("--headless");
-            driver = new ChromeDriver(options);
-        }
-
-        @AfterEach
-        void tearDown () {
-            driver.quit();
-            driver = null;
-        }
+    @BeforeEach
+    void setUp() {
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--disable-dev-shm-usage");
+        options.addArguments("--no-sandbox");
+        options.addArguments("--headless");
+        driver = new ChromeDriver(options);
     }
+
+    @AfterEach
+    void tearDown() {
+        driver.quit();
+        driver = null;
+    }
+}
 
 
