@@ -1,1 +1,1 @@
-[![Build status](https://ci.appveyor.com/api/projects/status/7ka2mphwssu09dgb?svg=true)](https://ci.appveyor.com/project/GulnazMm/web1-c85bk)
+[![Build status](https://ci.appveyor.com/api/projects/status/usq4wxo0g1c7a4d8?svg=true)](https://ci.appveyor.com/project/GulnazMm/web2)
